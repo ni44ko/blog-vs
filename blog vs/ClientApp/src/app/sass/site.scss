@@ -1,0 +1,16 @@
+@import './variables';
+
+html, body{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing:-1px;
+}
+.left-heading{
+    color: $left-h;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.left-section{
+    letter-spacing:-1px;
+    background-color: #FCFCFC;
+}

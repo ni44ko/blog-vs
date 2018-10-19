@@ -1,0 +1,36 @@
+@import "../sass/variables";
+
+.intro {
+  height: 200px;
+  background-color: #383637;
+  color: $left-h;
+}
+.main {
+  color: $dark-primary;
+}
+.intro h6 {
+  font-weight: 800;
+}
+.part {
+  border: 1px solid #e4e6e8;
+}
+.main {
+  height: 800px;
+}
+.about-me,
+.latest-posts {
+  margin: 20px 5px;
+}
+.about-me .left-heading {
+  margin-top: 10px;
+}
+.post {
+  margin: 20px;
+}
+.post h5 {
+  font-weight: 800;
+}
+.post-title {
+    border-bottom: 2px dotted #E4E6E8;
+    margin-bottom:10px;
+}
