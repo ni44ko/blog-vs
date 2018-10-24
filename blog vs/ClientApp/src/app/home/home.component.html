@@ -9,17 +9,28 @@
   </div>
   <div class="row main">
     <div class="col-8 part">
-      <div class="post">
+
+
+
+
+      <div class="post" *ngFor="let post of postlist">
         <div class="post-title">
-          <h5 class="text-center">See the.</h5>
+          <div class="text-center">{{post.title}} <span class="post-date text-right">{{post.datePublished | date: 'dd/MM/yyyy'}}</span></div>
         </div>
-        <p class="post-content text-justify">Lorem ipsum dolor sit amet, dicam congue tibique ei vix. Officiis legendos vis et,
-          eam ne augue iisque.
-          Mel facilis appareat id. Audire aeterno discere mea cu. Ad sit iusto ceteros splendide, usu causae habemus
-          neglegentur ad, tractatos consetetur qui at. :)</p>
+        <p class="post-content text-justify">{{post.content}}</p>
       </div>
-      <div>{{postlist}}</div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="col-4 part left-section">
       <div class="about-me text-center">
@@ -36,19 +47,14 @@
       <div class="latest-posts text-center">
         <h6 class="left-heading">Latest posts.</h6>
         <ul class="text-left">
-          <li>Lorem</li>
-          <li>dolor sit amet, dicam congue</li>
-          <li>neglegentur ad, tractatos consetetur qui at</li>
-          <li>facilis appareat</li>
+          <li *ngFor="let latest of latestpostlist">{{latest.title}}</li>
         </ul>
       </div>
 
       <div class="categories text-center">
         <h6 class="left-heading">Categories.</h6>
         <ul class="text-left">
-          <li>Angular</li>
-          <li>C#</li>
-          <li>CSS</li>
+          <li *ngFor="let category of categories">{{category.name}}</li>
         </ul>
       </div>
     </div>

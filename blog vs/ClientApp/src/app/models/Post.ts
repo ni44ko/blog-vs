@@ -1,7 +1,7 @@
 export interface Post {
-  DatePublished: string;
-  Title: string;
-  Content: string;
-  Category: string;
-  Intro: string;
+  datePublished: string;
+  title: string;
+  content: string;
+  category: string;
+  intro: string;
 }

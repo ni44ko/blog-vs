@@ -31,8 +31,24 @@ namespace blog_vs.Controllers
         [HttpPost("savepost")]
         public IActionResult SavePost(Post newPost)
         {
-            var data = _blogManager.SaveBlog(newPost);
+            var data = _blogManager.SavePost(newPost);
             return Ok(data);
         }
+
+        [HttpGet("getlatestposts")]
+        public IActionResult GetLatestPosts()
+        {
+            var data = _blogManager.GetLatestPosts();
+            return Ok(data);
+        }
+
+        [HttpGet("getcategories")]
+        public IActionResult GetCategories()
+        {
+            var data = _blogManager.GetCategories();
+            return Ok(data);
+        }
+
+
     }
 }

@@ -6,6 +6,8 @@ namespace blogvs.Repository
     public interface IBlogManager
     {
         List<Post> GetPosts();
-        bool SaveBlog(Post post);
+        bool SavePost(Post post);
+        List<Post> GetLatestPosts();
+        List<Category> GetCategories();
     }
 }

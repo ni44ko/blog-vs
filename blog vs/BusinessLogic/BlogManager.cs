@@ -20,7 +20,7 @@ namespace blogvs.Repository
             List<Post> post_lists = (from postObject in _blogDBContext.Posts
                                      select new Post()
                                      {
-                                         Id = postObject.Id,
+                                         PostId = postObject.PostId,
                                          Title = postObject.Title,
                                          DatePublished = postObject.DatePublished,
                                          Content = postObject.Content,
@@ -31,7 +31,7 @@ namespace blogvs.Repository
             return post_lists;
         }
 
-        public bool SaveBlog(Post newPost)
+        public bool SavePost(Post newPost)
         {
             bool result = true;
             var post = new Post()
@@ -52,6 +52,31 @@ namespace blogvs.Repository
                 result = false;
             }
             return result;
+        }
+
+        public List<Post> GetLatestPosts()
+        {
+            List<Post> post_lists = (from p in _blogDBContext.Posts
+                                     orderby p.DatePublished descending
+                                     select new Post()
+                                     {
+                                        PostId = p.PostId,
+                                        Title = p.Title
+                                     }).Take(3).ToList();
+
+            return post_lists;
+        }
+
+        public List<Category> GetCategories()
+        {
+            List<Category> post_categories = (from c in _blogDBContext.Categories
+                                              orderby c.CategoryId ascending
+                                              select new Category()
+                                              {
+                                                  CategoryId = c.CategoryId,
+                                                  Name = c.Name
+                                              }).ToList();
+            return post_categories;
         }
     }
 }

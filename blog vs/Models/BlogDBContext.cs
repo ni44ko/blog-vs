@@ -10,6 +10,7 @@ namespace blogvs.Models
     {
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         public BlogDBContext(DbContextOptions<BlogDBContext> options) : base(options)
         {
